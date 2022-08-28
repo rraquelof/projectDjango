@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% load static %} {% block head %}
+<title>Tcc - Tcc.titulo }}</title>
+{% endblock %} {% block conteudo %}
+<div class="page-header text-center py-3">
+  <h1>{{ tcc.titulo }}</h1>
+  <hr />
+</div>
+<div class="row">
+  <div class="col-sm-4">
+    {% if tcc.capa_tcc == '' %}
+    <img src="{% static 'img/tcc.png' %}" class="card-img-top" alt="..." />
+    {% else %}
+    <img src="{{ tcc.capa.url }}" class="card-img-top" alt="..." />
+    {% endif %}
+  </div>
+  <div class="col-sm-8">
+    <p class="h4">
+      <strong>Autor:</strong>
+      {{ autor.nome }}
+    </p>
+    {% endfor %}
+    <p class="h4">
+      <strong>Ano de Publicação:</strong>
+      {{ tcc.ano_pub }}
+    </p>
+    <p class="h4">
+      <strong>Quantidade de páginas:</strong>
+      {{ tcc.qtd_paginas }}
+    </p>
+    <p class="h4">
+      <strong>Orientador:</strong>
+      {{ tcc.orientador.nome }}
+    </p>
+    <p class="h4">
+      <strong>Tcc em PDF:</strong>
+      <a href="{{ tcc.tcc_pdf.url }}">Abrir</a>
+    </p>
+  </div>
+</div>
+{% endblock %}

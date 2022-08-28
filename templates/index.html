@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% load static %} {% block head %}
+<title>Biblioteca</title>
+{% endblock %} {% block conteudo %} {% include 'partils/_alertas.html' %}
+<div class="page-header text-center py-3">
+  <h1>Tccs</h1>
+  <hr />
+</div>
+<div class="row">
+  {% for tcc in object_list %}
+  <div class="col-sm-4">
+    <div class="card" style="width: 18rem;">
+      <a href="{% url 'detalhar_tcc_publicado' tcc.id %}">
+        {% if tcc.capa == '' %}
+        <img src="{% static 'img/tcc.png' %}" class="card-img-top" alt="..." />
+        {% else %}
+        <img src="{{ tcc.capa.url }}" class="card-img-top" alt="..." />
+        {% endif %}
+      </a>
+      <div class="card-body">
+        <a
+          href="{% url 'detalhar_tcc_publicado' tcc.id %}"
+          class="text-decoration-none text-reset"
+        >
+          <h5 class="card-title">{{ tcc.titulo }}</h5>
+        </a>
+        <p>Autor(es):</p>
+        {% for autor in tcc.autor.all %}
+        <p class="card-text">{{ autor.nome }}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% empty %}
+  <p>Nenhum tcc registrado.</p>
+  {% endfor %}
+</div>
+{% endblock %}
