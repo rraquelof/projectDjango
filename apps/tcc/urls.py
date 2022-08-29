@@ -2,11 +2,11 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('', TccPublicadoList.as_view(), name='index'),
-    path('dashboard/livros/', TccListPorUsuario.as_view(), name='listar_livros_usuario'),
-    path('listar/livros_autor/<int:autor>/', TccAutorList.as_view(), name='listar_livros_autor'),
+    path('', TccList.as_view(), name='index'),
+    path('dashboard/tccs/', TccListPorUsuario.as_view(), name='listar_tccs_usuario'),
+    path('listar/tccs_autor/<int:autor>/', TccAutorList.as_view(), name='listar_tccs_autor'),
     path('detalhar/tcc/<int:pk>/', TccDetail.as_view(), name='detalhar_tcc'),
-    path('tcc/<int:pk>/', TccDetailPublicado.as_view(), name='detalhar_tcc_publicado'),
+    
     path('criar/tcc/', TccCreate.as_view(), name='criar_tcc'),
     path('editar/tcc/<int:pk>/', TccUpdate.as_view(), name='editar_tcc'),
     path('deletar/tcc/<int:pk>/', TccDelete.as_view(), name='deletar_tcc'),

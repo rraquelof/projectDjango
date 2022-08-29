@@ -9,7 +9,7 @@
   {% for tcc in object_list %}
   <div class="col-sm-4">
     <div class="card" style="width: 18rem;">
-      <a href="{% url 'detalhar_tcc_publicado' tcc.id %}">
+      <!-- <a href="{% url 'detalhar_tcc_publicado' tcc.id %}"> -->
         {% if tcc.capa == '' %}
         <img src="{% static 'img/tcc.png' %}" class="card-img-top" alt="..." />
         {% else %}
@@ -17,10 +17,10 @@
         {% endif %}
       </a>
       <div class="card-body">
-        <a
+      <!--   <a
           href="{% url 'detalhar_tcc_publicado' tcc.id %}"
           class="text-decoration-none text-reset"
-        >
+        > -->
           <h5 class="card-title">{{ tcc.titulo }}</h5>
         </a>
         <p>Autor(es):</p>

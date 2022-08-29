@@ -2,7 +2,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from apps.tcc.form import TccForm
 from apps.tcc.models import Tcc, Autor
-from apps.tcc.form import tccForm
+from apps.tcc.form import TccForm
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin, messages
@@ -70,10 +70,10 @@ class TccDetail(LoginRequiredMixin, DetailView):
     model = Tcc
     template_name = "cadastros/detalhes/tcc.html"
 
-class TccDetailPublicado(DetailView):
+""" class TccDetailPublicado(DetailView):
     model = Tcc
     template_name = "cadastros/detalhes/tcc.html"
-
+ """
 class TccListPorUsuario(LoginRequiredMixin, ListView):
     login_url = reverse_lazy('login')
     model = Tcc
@@ -81,18 +81,22 @@ class TccListPorUsuario(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         return Tcc.objects.filter(usuario=self.request.user)
-
+""" 
 class TccPublicadoList(ListView):
     model = Tcc
     template_name = "index.html"
 
     def get_queryset(self):
-        return Tcc.objects.filter(publicado=True)
+        return Tcc.objects.filter(publicado=True) """
 
 class TccAutorList(ListView):
     model = Tcc
     template_name = "index.html"
 
-    def get_queryset(self):
+"""     def get_queryset(self):
         self.object_list = Tcc.objects.filter(publicado=True, autor=Autor.objects.get(pk=self.kwargs['autor']))
-        return self.object_list
+        return self.object_list """
+
+class TccList(ListView):
+    model = Tcc
+    template_name = "index.html"

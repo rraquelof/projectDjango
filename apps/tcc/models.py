@@ -39,12 +39,10 @@ class Curso(models.Model):
 
 class Tcc(models.Model):
     id = models.IntegerField(verbose_name="id",primary_key=True)
-    titulo = models.CharField(verbose_name="titulo",max_length=150)
+    titulo = models.CharField(verbose_name="titulo",max_length=200)
     autor = models.ManyToManyField(Autor)
     orientador = models.ManyToManyField(Orientador)
     curso = models.CharField(verbose_name="Curso",max_length=150)
-    ano = models.IntegerField(verbose_name="Ano")
-    resumo = models.TextField(verbose_name="Resumo")
     arquivo = models.CharField(verbose_name="Arquivo",max_length=150)
     palavras_chave = models.TextField(verbose_name="Palavras chave")
 

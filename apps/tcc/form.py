@@ -1,5 +1,5 @@
 from django import forms
-from .models import Autor, Livro, Tcc
+from .models import Autor, Tcc
 
 class AutorForm(forms.ModelForm):
 
