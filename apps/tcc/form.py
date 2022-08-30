@@ -1,5 +1,5 @@
 from django import forms
-from .models import Autor, Tcc
+from .models import Autor, Orientador, Tcc, Usuario
 
 class AutorForm(forms.ModelForm):
 
@@ -23,3 +23,35 @@ class TccForm(forms.ModelForm):
         model = Tcc
         fields = "__all__"
         exclude = ('usuario',)
+
+class OrientadorForm(forms.ModelForm):
+
+    data_nasc = forms.DateField(
+        label='Data de nascimento',
+        widget=forms.DateInput(
+            format='%Y-%m-%d',
+            attrs={
+                'type': 'date',
+            }),
+        input_formats=('%Y-%m-%d',),
+    )
+
+    class Meta:
+        model = Orientador
+        fields = "__all__"
+
+class UsuarioForm(forms.ModelForm):
+
+    data_nasc = forms.DateField(
+        label='Data de nascimento',
+        widget=forms.DateInput(
+            format='%Y-%m-%d',
+            attrs={
+                'type': 'date',
+            }),
+        input_formats=('%Y-%m-%d',),
+    )
+
+    class Meta:
+        model = Usuario
+        fields = "__all__"

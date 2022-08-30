@@ -99,4 +99,4 @@ class TccAutorList(ListView):
 
 class TccList(ListView):
     model = Tcc
-    template_name = "index.html"
+    template_name = "cadastros/listas/dashboard.html"

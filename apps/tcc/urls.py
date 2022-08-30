@@ -1,4 +1,7 @@
 from django.urls import path
+
+from apps.tcc.views.orientador import OrientadorCreate, OrientadorDelete, OrientadorList, OrientadorUpdate
+from apps.tcc.views.usuarios import UsuariosList
 from .views import *
 
 urlpatterns = [
@@ -21,7 +24,12 @@ urlpatterns = [
     path('editar/autor/<int:pk>/', AutorUpdate.as_view(), name='editar_autor'),
     path('deletar/autor/<int:pk>/', AutorDelete.as_view(), name='deletar_autor'),
     path('listar/autores/', AutorList.as_view(), name='listar_autores'),
-    path('listar/dashboard/', TccListPorUsuario.as_view(), name='listar_tccs'),
-    path('detalhar/usuarios/', TccListPorUsuario.as_view(), name='listar_usuarios'),
+    path('listar/dashboard/', TccList.as_view(), name='listar_tccs'),
+    path('detalhar/usuarios/', UsuariosList.as_view(), name='listar_usuarios'),
+
+    path('criar/orientador/', OrientadorCreate.as_view(), name='criar_orientador'),
+    path('editar/orientador/<int:pk>/', OrientadorUpdate.as_view(), name='editar_orientador'),
+    path('deletar/orientador/<int:pk>/', OrientadorDelete.as_view(), name='deletar_orientador'),
+    path('listar/orientadores/', OrientadorList.as_view(), name='listar_orientadores'),
 
 ]

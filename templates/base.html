@@ -57,7 +57,7 @@
           
             {% if request.user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'listar_tccs_usuario' %}">
+              <a class="nav-link" href="{% url 'listar_tccs' %}">
                 <i class="bi bi-book-fill"></i>
                 Meus Tccs
               </a>
@@ -69,7 +69,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'detalhar_usuario' %}">
+              <a class="nav-link" href="{% url 'listar_usuarios' %}">
                 
                 Meus dados
               </a>
@@ -79,6 +79,12 @@
                 
                 Alterar senha
               </a>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'listar_orientadores' %}">
+                  <i class="bi bi-book-fill"></i>
+                  Orientadores
+                </a>
+              </li>
             </li>
           </ul>
         </nav>
