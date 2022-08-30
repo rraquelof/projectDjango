@@ -25,14 +25,14 @@
       </tr>
     </thead>
     <tbody>
-      {% for autor in object_list %}
+      {% for orientador in object_list %}
       <tr>
-        <td>{{ autor.nome }}</td>
-        <td>{{ autor.sobrenome }}</td>
-        <td>{{ autor.foto }}</td>
+        <td>{{ orientador.nome }}</td>
+        <td>{{ orientador.sobrenome }}</td>
+        <td>{{ orientador.foto }}</td>
         <td>
           <a
-            href="{% url 'listar_tcc_autor' autor.pk %}"
+            href="{% url 'listar_tcc_orientador' orientador.pk %}"
             class="btn btn-primary btn-sm"
           >
             <i class="bi bi-book"></i>
@@ -42,14 +42,14 @@
         {% if request.user.is_authenticated %}
         <td>
           <a
-            href="{% url 'editar_autor' autor.pk %}"
+            href="{% url 'editar_orientador' orientador.pk %}"
             class="btn btn-warning btn-sm"
           >
             <i class="bi bi-pencil-square"></i>
             Editar
           </a>
           <a
-            href="{% url 'deletar_autor' autor.pk %}"
+            href="{% url 'deletar_orientador' orientador.pk %}"
             class="btn btn-danger btn-sm"
           >
             <i class="bi bi-trash"></i>

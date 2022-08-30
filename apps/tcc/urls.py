@@ -14,6 +14,7 @@ urlpatterns = [
 
     path('dashboard/tccs/', TccListPorUsuario.as_view(), name='listar_tccs_usuario'),
     path('listar/tcc_autor/<int:autor>/', TccAutorList.as_view(), name='listar_tcc_autor'),
+    path('listar/tcc_orientador/<int:autor>/', TccOriendatorList.as_view(), name='listar_tcc_orientador'),
     path('detalhar/tcc/<int:pk>/', TccDetail.as_view(), name='detalhar_tcc'),
     
     path('criar/tcc/', TccCreate.as_view(), name='criar_tcc'),

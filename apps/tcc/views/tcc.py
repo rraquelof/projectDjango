@@ -36,7 +36,7 @@ class TccUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     form_class = TccForm
     success_message = 'Tcc atualizado com sucesso!'
     template_name = "cadastros/form.html"
-    success_url = reverse_lazy("listar_tccs_usuario")
+    """ success_url = reverse_lazy("listar_tccs_usuario") """
 
     def get_context_data(self, **kwargs):
         context = super(UpdateView, self).get_context_data(**kwargs)
@@ -100,3 +100,8 @@ class TccAutorList(ListView):
 class TccList(ListView):
     model = Tcc
     template_name = "cadastros/listas/dashboard.html"
+
+
+class TccOriendatorList(ListView):
+    model = Tcc
+    template_name = "index.html"

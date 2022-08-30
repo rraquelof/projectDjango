@@ -13,7 +13,7 @@
 <form action="." method="post">
   <p>
     Deseja excluir o registro:
-    <b>{{ object }}</b>
+    <b>{{ object.nome }}</b>
     ?
   </p>
   {% csrf_token %} {{ form.as_p }}
