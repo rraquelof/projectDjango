@@ -10,4 +10,5 @@ urlpatterns = [
     path('editar/usuario/', UsuarioUpdate.as_view(), name='editar_usuario'),
     path('listar/usuarios/', UsuarioList.as_view(), name='listar_usuarios'),
     path('detalhar/usuario/', UsuarioDetail.as_view(), name='detalhar_usuario'),
+    
 ]

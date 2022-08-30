@@ -17,7 +17,7 @@ class TccCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
     def get_context_data(self, **kwargs):
         context = super(CreateView, self).get_context_data(**kwargs)
-        context['titulo'] = 'Tccs - Biblioteca'
+        context['titulo'] = 'Tccs - Repositório'
         context['descricao'] = 'Cadastro de Tcc'
         return context
 
