@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% load static %} {% block head %}
-<title>Tcc - Tcc.titulo }}</title>
+<title>Tcc - {{ tcc.titulo }}</title>
 {% endblock %} {% block conteudo %}
 <div class="page-header text-center py-3">
   <h1>{{ tcc.titulo }}</h1>
@@ -16,20 +16,12 @@
   <div class="col-sm-8">
     <p class="h4">
       <strong>Autor:</strong>
-      {{ autor.nome }}
+      {{ user.username }}
     </p>
-    {% endfor %}
-    <p class="h4">
-      <strong>Ano de Publicação:</strong>
-      {{ tcc.ano_pub }}
-    </p>
-    <p class="h4">
-      <strong>Quantidade de páginas:</strong>
-      {{ tcc.qtd_paginas }}
-    </p>
+  
     <p class="h4">
       <strong>Orientador:</strong>
-      {{ tcc.orientador.nome }}
+      {{ orientador.nome }}
     </p>
     <p class="h4">
       <strong>Tcc em PDF:</strong>

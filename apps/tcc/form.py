@@ -1,5 +1,5 @@
 from django import forms
-from .models import Autor, Orientador, Tcc, Usuario
+from .models import Autor, Orientador, Tcc, Usuario, Curso
 
 class AutorForm(forms.ModelForm):
 
@@ -54,4 +54,12 @@ class UsuarioForm(forms.ModelForm):
 
     class Meta:
         model = Usuario
+        fields = "__all__"
+
+class CursoForm(forms.ModelForm):
+
+        
+
+    class Meta:
+        model = Curso
         fields = "__all__"

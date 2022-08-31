@@ -62,27 +62,31 @@
                 Meus Tccs
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'logout' %}">
-                
-                Logout
-              </a>
-            </li>
+            
             <li class="nav-item">
               <a class="nav-link" href="{% url 'listar_usuarios' %}">
-                
                 Meus dados
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'password' %}">
-                
                 Alterar senha
               </a>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'listar_orientadores' %}">
                   <i class="bi bi-book-fill"></i>
                   Orientadores
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'listar_cursos' %}">
+                  <i class="bi bi-book-fill"></i>
+                  Cursos
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">
+                  Logout
                 </a>
               </li>
             </li>

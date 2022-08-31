@@ -1,4 +1,5 @@
 from django.urls import path
+from apps.tcc.views.cursos import CursoCreate, CursosList
 
 from apps.tcc.views.orientador import OrientadorCreate, OrientadorDelete, OrientadorList, OrientadorUpdate
 from apps.tcc.views.usuarios import UsuariosList
@@ -11,6 +12,8 @@ urlpatterns = [
     path('', TccDelete.as_view()),
     path('', TccDetail.as_view() ),
     path('',AutorCreate.as_view()),
+    path('',CursoCreate.as_view()),
+
 
     path('dashboard/tccs/', TccListPorUsuario.as_view(), name='listar_tccs_usuario'),
     path('listar/tcc_autor/<int:autor>/', TccAutorList.as_view(), name='listar_tcc_autor'),
@@ -27,10 +30,18 @@ urlpatterns = [
     path('listar/autores/', AutorList.as_view(), name='listar_autores'),
     path('listar/dashboard/', TccList.as_view(), name='listar_tccs'),
     path('detalhar/usuarios/', UsuariosList.as_view(), name='listar_usuarios'),
+    path('detalhar/usuarios/', UsuariosList.as_view(), name='listar_tcc_orientador'),
+    path('criar/curso/', AutorCreate.as_view(), name='criar_curso'),
+    
 
     path('criar/orientador/', OrientadorCreate.as_view(), name='criar_orientador'),
     path('editar/orientador/<int:pk>/', OrientadorUpdate.as_view(), name='editar_orientador'),
     path('deletar/orientador/<int:pk>/', OrientadorDelete.as_view(), name='deletar_orientador'),
     path('listar/orientadores/', OrientadorList.as_view(), name='listar_orientadores'),
+    path('listar/cursos/', CursosList.as_view(), name='listar_cursos'),
+    path('editar/curso/<int:pk>/', CursoUpdate.as_view(), name='editar_curso'),
+    path('deletar/curso/<int:pk>/', CursoDelete.as_view(), name='deletar_curso'),
+    path('criar/cursos/', CursoCreate.as_view(), name='criar_cursos'),
+
 
 ]
