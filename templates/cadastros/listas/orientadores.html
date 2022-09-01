@@ -18,7 +18,7 @@
       <tr>
         <th scope="col">Nome</th>
         <th scope="col">Sobrenome</th>
-        <th scope="col">Tcc</th>
+        <th scope="col">Lattes</th>
         {% if request.user.is_authenticated %}
         <th scope="col">Ações</th>
         {% endif %}
@@ -29,7 +29,7 @@
       <tr>
         <td>{{ orientador.nome }}</td>
         <td>{{ orientador.sobrenome }}</td>
-        <td>{{ orientador.foto }}</td>
+        <td>{{ orientador.lattes }}</td>
        
         {% if request.user.is_authenticated %}
         <td>
