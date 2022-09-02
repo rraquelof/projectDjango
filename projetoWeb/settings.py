@@ -91,7 +91,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'bancotcc',
         'USER': 'postgres',
-        'PASSWORD': 'senhabd123',
+        'PASSWORD': '123456',
     }
 }
 

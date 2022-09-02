@@ -16,6 +16,7 @@
   <table class="table table-striped" id="tabela-listar">
     <thead>
       <tr>
+        <th scope="col">Id</th>
         <th scope="col">Nome</th>
         <th scope="col">Sobrenome</th>
         <th scope="col">Lattes</th>
@@ -27,6 +28,7 @@
     <tbody>
       {% for orientador in object_list %}
       <tr>
+        <td>{{ orientador.id }}</td>
         <td>{{ orientador.nome }}</td>
         <td>{{ orientador.sobrenome }}</td>
         <td>{{ orientador.lattes }}</td>
